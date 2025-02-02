@@ -1,0 +1,212 @@
+* {
+    box-sizing: border-box;
+  }
+  
+.fondo {
+  background-color: #0f0f0f;
+  height: 100%;
+}
+
+  .grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    width: 98%;
+    margin-left: 1.7vh;
+  }
+  .main {
+    background: rgb(39, 37, 37);
+  }
+  .side {
+    background: rgb(34, 34, 33);
+  }
+  .main,
+  .side {
+    padding: 2%;
+    border-radius: 4px
+  }
+  
+  @media(max-width: 400px){
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  div.scrollmenu {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+  }
+  
+  div.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+  
+  div.scrollmenu a:hover {
+    background-color: #777;
+  }
+
+  /* Add a gray background color with some padding */
+  body {
+    font-family: Arial;
+    padding: 20px;
+    background: #181717;
+  }
+  p {
+    color: white;
+    font-size: 14px;
+
+  }
+  
+  /* Header/Blog Title */
+  .header {
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    position: relative;
+    background: rgb(35, 34, 34);
+    background-size: cover;
+    /* Gradiente negro semi-transparente */
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.912), /* Negro con 50% de opacidad */
+        rgba(0, 0, 0, 0.664)  /* Negro con 50% de opacidad */
+    ), url(../imgs/hacvker.jpg);
+    background-size: cover;
+  }
+  .imghack {
+    width: 100%;
+  }
+  
+  /* Create two unequal columns that floats next to each other */
+  /* Left column */
+  .leftcolumn {   
+    float: left;
+    width: 75%;
+  }
+  
+  /* Right column */
+  .rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+  }
+  
+  /* Fake image */
+  .fakeimg {
+    background-color: #181717;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Add a card effect for articles */
+  .card {
+     background-color: rgb(36, 34, 34);
+     padding: 20px;
+     margin-top: 20px;
+     color: #ddd;
+
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 20px;
+    text-align: center;
+    background: #252424;
+    margin-top: 20px;
+    color: #0f0;
+  }
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+
+
+  /*botons*/
+
+
+
+
+/*radio activo*/
+.radioactive-text {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #0f0; /* Verde radioactivo */
+    text-shadow: 0 0 3px #0f0, 0 0 6px #0f0, 0 0 9px #0f0;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        text-shadow: 0 0 3px rgb(2, 170, 2),  rgb(2, 170, 2),  rgb(2, 170, 2);
+        opacity: 1;
+    }
+    50% {
+        text-shadow: 0 0 6px rgb(5, 158, 5), 0 0 12px rgb(8, 142, 8), 0 0 18px rgb(5, 158, 5);
+        opacity: 0.8;
+    }
+    100% {
+        text-shadow: 0 0 3px #0f0, 0 0 6px #0f0, 0 0 9px #0f0;
+        opacity: 1;
+    }
+}
+
+
+
+.radioactive-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #0f0; /* Verde radioactivo */
+    background-color: transparent;
+    border: 2px solid #0f0;
+    border-radius: 5px;
+    text-align: center;
+    text-shadow: 0 0 3px #0f0, 0 0 6px #0f0, 0 0 9px #0f0;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    animation: pulse 2s infinite;
+}
+
+.radioactive-button:hover {
+    text-shadow: 0 0 6px #0f0, 0 0 12px #0f0, 0 0 18px #0f0;
+    opacity: 0.8;
+}
+
+.radioactive-button:active {
+    text-shadow: 0 0 3px #0f0, 0 0 6px #0f0, 0 0 9px #0f0;
+    opacity: 1;
+}
+
+@keyframes pulse {
+    0% {
+        text-shadow: 0 0 3px #0f0, 0 0 6px #0f0, 0 0 9px #0f0;
+        opacity: 1;
+    }
+    50% {
+        text-shadow: 0 0 8px #0f0, 0 0 16px #0f0, 0 0 24px #0f0;
+        opacity: 0.7;
+    }
+    100% {
+        text-shadow: 0 0 3px #0f0, 0 0 6px #0f0, 0 0 9px #0f0;
+        opacity: 1;
+    }
+}
