@@ -258,3 +258,159 @@
       padding: 10px 20px; /* Reducir el padding para que se ajuste mejor */
   }
 }
+
+
+
+
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+  height: 80vh;
+}
+
+/* Estilos para el video */
+.video-container {
+  flex: 1;
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Estilos para el texto */
+.text-container {
+  flex: 1;
+  padding: 20px;
+  color: #50fe10;
+}
+
+h1 {
+  animation: fadeIn 2s ease-in-out;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 10px;
+  animation: fadeIn 3s ease-in-out;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Hacer que todo sea responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .text-container {
+    text-align: center;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.grid-button {
+  padding: 15px 30px;
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  font-size: 16px;
+  color: rgb(217, 138, 33);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.grid-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(45deg, black, green);
+  transition: all 0.4s ease;
+  transform: translate(-50%, -50%) rotate(45deg);
+  z-index: 0;
+  opacity: 0;
+}
+
+.grid-button:hover::before {
+  opacity: 1;
+  width: 0;
+  height: 0;
+}
+
+.grid-button:hover {
+  color: rgb(103, 221, 24);
+  background-color: rgb(15, 14, 14);
+  border-color: green;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+}
+
+.grid-button span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+  .button-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas más pequeñas */
+  }
+
+  .grid-button {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .button-grid {
+    grid-template-columns: 1fr; /* 1 columna en pantallas aún más pequeñas */
+  }
+
+  .grid-button {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
