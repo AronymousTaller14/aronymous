@@ -1,0 +1,74 @@
+ /* Estilo para el cuerpo de la página */
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* El fondo de la barra lateral */
+.sidenav {
+    height: 30%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 9999;
+}
+
+/* Estilo de los enlaces dentro de la barra lateral */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #88e902;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #fd4801;
+}
+
+/* Estilo para el botón de abrir la barra lateral */
+.open-btn {
+    font-size: 20px;
+    background-color: #111;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* Estilo para el botón de cerrar */
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #818181;
+}
+
+/* Estilo de fondo cuando la barra está abierta */
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: 0.5s;
+    display: none;
+    z-index: 9998;
+}
+
+/* Mostrar el fondo cuando la barra está abierta */
+.overlay.show {
+    display: block;
+}

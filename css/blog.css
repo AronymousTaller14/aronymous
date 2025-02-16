@@ -1,3 +1,57 @@
+/* Estilo base del modal */
+.modal_anuncio {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Ocupa todo el ancho de la pantalla */
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente */
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 9999; /* Asegura que el modal esté por encima de otros elementos */
+}
+
+.modal_contenido {
+  background-color: #010101;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+/* Efecto de transición al abrir el modal */
+.modal_anuncio.visible .modal_contenido {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal_anuncio.desaparecer .modal_contenido {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+/* Hacer el modal responsivo */
+@media (max-width: 768px) {
+  .modal_contenido {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal_contenido {
+    width: 95%;
+  }
+}
+
+
 * {
     box-sizing: border-box;
   }
@@ -53,7 +107,6 @@
   /* Add a gray background color with some padding */
   body {
     font-family: Arial;
-    padding: 20px;
     background: #181717;
   }
   p {
@@ -141,72 +194,67 @@
 
 
 
-
-/*radio activo*/
+/* Estilo general */
 .radioactive-text {
-    font-size: 3rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #0f0; /* Verde radioactivo */
-    text-shadow: 0 0 3px #0f0, 0 0 6px #0f0, 0 0 9px #0f0;
-    animation: pulse 2s infinite;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #0f0; /* Verde radioactivo */
+  text-shadow: 0 0 3px #0f0, 0 0 6px #0f0, 0 0 9px #0f0;
+  animation: pulse 2s infinite;
 }
-
-@keyframes pulse {
-    0% {
-        text-shadow: 0 0 3px rgb(2, 170, 2),  rgb(2, 170, 2),  rgb(2, 170, 2);
-        opacity: 1;
-    }
-    50% {
-        text-shadow: 0 0 6px rgb(5, 158, 5), 0 0 12px rgb(8, 142, 8), 0 0 18px rgb(5, 158, 5);
-        opacity: 0.8;
-    }
-    100% {
-        text-shadow: 0 0 3px #0f0, 0 0 6px #0f0, 0 0 9px #0f0;
-        opacity: 1;
-    }
-}
-
-
 
 .radioactive-button {
-    display: inline-block;
-    padding: 15px 30px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #0f0; /* Verde radioactivo */
-    background-color: transparent;
-    border: 2px solid #0f0;
-    border-radius: 5px;
-    text-align: center;
-    text-shadow: 0 0 3px #0f0, 0 0 6px #0f0, 0 0 9px #0f0;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    animation: pulse 2s infinite;
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #0f0; /* Verde radioactivo */
+  background-color: transparent;
+  border: 2px solid #0f0;
+  border-radius: 5px;
+  text-align: center;
+  text-shadow: 0 0 3px #0f0, 0 0 6px #0f0, 0 0 9px #0f0;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  animation: pulse 2s infinite;
 }
 
 .radioactive-button:hover {
-    text-shadow: 0 0 6px #0f0, 0 0 12px #0f0, 0 0 18px #0f0;
-    opacity: 0.8;
+  text-shadow: 0 0 6px #0f0, 0 0 12px #0f0, 0 0 18px #0f0;
+  opacity: 0.8;
 }
 
 .radioactive-button:active {
-    text-shadow: 0 0 3px #0f0, 0 0 6px #0f0, 0 0 9px #0f0;
-    opacity: 1;
+  text-shadow: 0 0 3px #0f0, 0 0 6px #0f0, 0 0 9px #0f0;
+  opacity: 1;
 }
 
+/* Animación de parpadeo */
 @keyframes pulse {
-    0% {
-        text-shadow: 0 0 3px #0f0, 0 0 6px #0f0, 0 0 9px #0f0;
-        opacity: 1;
-    }
-    50% {
-        text-shadow: 0 0 8px #0f0, 0 0 16px #0f0, 0 0 24px #0f0;
-        opacity: 0.7;
-    }
-    100% {
-        text-shadow: 0 0 3px #0f0, 0 0 6px #0f0, 0 0 9px #0f0;
-        opacity: 1;
-    }
+  0% {
+      text-shadow: 0 0 3px #0f0, 0 0 6px #0f0, 0 0 9px #0f0;
+      opacity: 1;
+  }
+  50% {
+      text-shadow: 0 0 8px #0f0, 0 0 16px #0f0, 0 0 24px #0f0;
+      opacity: 0.7;
+  }
+  100% {
+      text-shadow: 0 0 3px #0f0, 0 0 6px #0f0, 0 0 9px #0f0;
+      opacity: 1;
+  }
+}
+
+/* Estilos responsivos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .radioactive-text {
+      font-size: 1.5rem; /* Reducir el tamaño del texto en pantallas pequeñas */
+  }
+
+  .radioactive-button {
+      font-size: 1rem; /* Reducir el tamaño del botón en pantallas pequeñas */
+      padding: 10px 20px; /* Reducir el padding para que se ajuste mejor */
+  }
 }
