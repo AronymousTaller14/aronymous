@@ -414,3 +414,114 @@ p {
     font-size: 12px;
   }
 }
+
+
+
+.cards_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 39px;
+  width: 100%;
+  max-width: 97%;
+  margin-left: 17px;
+}
+.cards_tienda {
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 255, 0, 0.5);
+  background: rgb(19, 19, 19);
+  text-align: center;
+  transition: transform 0.3s;
+  color: white;
+}
+.cards_tienda:hover {
+  transform: scale(1.05);
+}
+.cards_tienda img {
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+.cards_tienda:hover img {
+  transform: scale(1.1);
+}
+.cards_tienda-content {
+  padding: 20px;
+}
+.cards_tienda h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.cards_tienda p {
+  font-size: 16px;
+  color: #ddd;
+  margin-bottom: 15px;
+}
+.cards_tienda a {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #00ff00;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+.cards_tienda a:hover {
+  background: #00cc00;
+}
+
+
+
+
+
+
+.btn {
+  background: linear-gradient(45deg, black, green);
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  animation: subirBajar 1s infinite ease-in-out;
+}
+/* Definimos la animación de subir y bajar */
+@keyframes subirBajar {
+  0% {
+    transform: translateY(0); /* Posición inicial */
+  }
+  50% {
+    transform: translateY(-10px); /* Subir hacia arriba */
+  }
+  100% {
+    transform: translateY(0); /* Regresar a la posición inicial */
+  }
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.5s;
+}
+.btn:hover::before {
+  left: 100%;
+}
+.btn:hover {
+  background: linear-gradient(45deg, orange, darkorange);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
+}
+.btn span {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+.btn:hover span {
+  transform: scale(1.2);
+}
+
