@@ -427,7 +427,7 @@ p {
 }
 .cards_tienda {
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 255, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0, 255, 0, 0.153);
   background: rgb(19, 19, 19);
   text-align: center;
   transition: transform 0.3s;
